@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AspNetQuartSignalR.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <% = System.Web.Optimization.Styles.Render("~/bundles/css")%>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </form>
+    <% = Scripts.Render("~/bundles/jquery")%>
+    <% = Scripts.Render("~/bundles/signalr")%>
+    <script src="<% =Scripts.Url("~/signalr/hubs") %>" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>
